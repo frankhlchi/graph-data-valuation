@@ -131,44 +131,38 @@ for filename in os.listdir(directory):
     
 filenames = matching_files[:ratio]
 
-# 初始化一个 defaultdict，其会为每一个新的键提供一个空的 list
+# extract the saved pc value into a dataframe
 results = collections.defaultdict(list)
-
-# 对于每个文件名
 counter =0 
 for filename in filenames:
-    # 打开并读取文件
     with open('value/' + filename, 'rb') as f:
         data = pickle.load(f)
-    # 遍历文件中的每个键值对
     for key, sub_dict in data.items():
         for sub_key, sub_sub_dict in sub_dict.items():
             for sub_sub_key, value in sub_sub_dict.items():
-                # 将值添加到结果字典中对应键的 list 中
                 results[(key, sub_key, sub_sub_key)].append(value)
     counter += 1
     
-# 计算每个键的平均值
+
 for key, values in results.items():
     results[key] = sum(values) / (len(values)*10)
 
-
-# 创建一个列表，其中每个元素是一个字典。这个字典的键是列名，值是行的值。
 data = [{'key1': k1, 'key2': k2, 'key3': k3, 'value': v} for (k1, k2, k3), v in results.items()]
-
-# 从这个列表创建一个 DataFrame
 win_df = pd.DataFrame(data)
 
-
+#aggregate hop-1 neighbors value (cannot be a labled node), for a node with different ranks, we label it as the highest rank
+#aggregate hop-1 neighbors value when their position is hop-1 neighbors (key2)
 win_df_11 = pd.DataFrame(win_df [win_df['key2'].isin(win_df['key1']) == False] .groupby('key2').\
                     value.sum().sort_values()).reset_index()
 win_df_11.columns= ['key', 'value']
 hop_1_list = win_df [win_df['key2'].isin(win_df['key1']) == False]['key2'].unique()
+#aggregate hop-1 neighbors value when their position is hop-2 neighbors (key3)
 win_df_12 = pd.DataFrame(win_df [(win_df['key3'] != win_df['key2'])&(win_df['key3'].isin(hop_1_list) )].\
                      groupby('key3').value.sum().sort_values()).reset_index()
 win_df_12.columns= ['key', 'value']
 
 win_df_1 =  pd.DataFrame(pd.concat([win_df_11, win_df_12]).groupby('key').value.sum().sort_values()).reset_index()
+#aggregate hop-2 neighbors value (hop-2 neighbors vale can only come from hop-2)
 win_df_2 = pd.DataFrame(win_df [(win_df['key3'].isin(win_df['key2']) == False)&\
         (win_df['key3'].isin(win_df['key1']) == False)] .groupby('key3').\
                     value.sum().sort_values()).reset_index()
