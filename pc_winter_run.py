@@ -240,19 +240,8 @@ def generate_maps(train_idx_list, num_hops, edge_index):
     The key chain stands for one contribution path of a node in a computational tree:
     [labeled][labeled][labeled] is a labeled node;
     [labeled][hop_1_node][hop_1_node] is a label' node's 1-distance neighbor;
-    [labeled][hop_1_node][hop_2_node] is a abel' node's first hop neighbor;
+    [labeled][hop_1_node][hop_2_node] is a label' node's 2-distance neighbor;
     Here the key index is the node index in the graph. 
-
-    Args:
-    train_idx_list (list): List of indices of labeled nodes in the training set.
-    num_hops (int): Number of hops to consider in the neighborhood.
-    edge_index (torch.Tensor): Edge index of the graph.
-
-    Returns:
-    tuple: (labeled_to_player_map, sample_value_dict, sample_counter_dict)
-        - labeled_to_player_map: A nested dictionary representing the contribution tree.
-        - sample_value_dict: A dictionary to store the accumulated values for each player.
-        - sample_counter_dict: A dictionary to count the number of times each player is sampled.
     """
 
 
