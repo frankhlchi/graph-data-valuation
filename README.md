@@ -1,5 +1,3 @@
-理解了，我将在现有结构的基础上扩展README文件，不添加新的部分。以下是扩展后的版本：
-
 # Graph Data Valuation
 
 This repository contains code for performing data valuation on graph-structured data using the Precedence-Constrained Winter (PC-Winter) value method. The PC-Winter algorithm is designed to identify influential nodes in graph datasets by considering the hierarchical structure of node contributions.
