@@ -338,6 +338,7 @@ def parse_args():
     parser.add_argument('--num_hops', type=int, default=2, help='Number of hops.')
     parser.add_argument('--seed', type=int, default=0, help='Random seed for permutation.')
     parser.add_argument('--num_perm', type=int, default=10, help='Number of permutations.')
+    parser.add_argument('--label_trunc_ratio', type=float, default=0, help='Label trunc ratio')
     parser.add_argument('--group_trunc_ratio_hop_1', type=float, default=0.5, help='Hop 1 Group trunc ratio')
     parser.add_argument('--group_trunc_ratio_hop_2', type=float, default=0.7, help='Hop 2 Group trunc ratio.')
     parser.add_argument( '--verbose', type = bool, default = True)
@@ -354,6 +355,7 @@ if __name__ == "__main__":
     num_hops = args.num_hops
     seed = args.seed
     num_perm = args.num_perm
+    label_trunc_ratio = args.label_trunc_ratio
     group_trunc_ratio_hop_1 = args.group_trunc_ratio_hop_1
     group_trunc_ratio_hop_2 = args.group_trunc_ratio_hop_2
     verbose = args.verbose
