@@ -1,4 +1,4 @@
-# Graph Data Valuation
+# Graph Data Valuation with PC-Winter Value
 
 ![Graph Data Valuation Framework](https://github.com/frankhlchi/graph-data-valuation/blob/main/framework.png)
 
