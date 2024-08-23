@@ -2,6 +2,8 @@
 
 This repository contains code for performing data valuation on graph-structured data using the Precedence-Constrained Winter (PC-Winter) value method. The PC-Winter algorithm is designed to identify influential graph elements in graph datasets by considering the hierarchical structure of node contributions.
 
+---
+
 **The image below illustrates our PC-Winter value estimation for graph data valuation.**
 
 1. **Input Graphs (Inductive Setting)**: This includes three mutually exclusive graph structures:
@@ -20,6 +22,7 @@ This repository contains code for performing data valuation on graph-structured 
 
 ![Graph Data Valuation Framework](https://github.com/frankhlchi/graph-data-valuation/blob/main/framework.png)
 
+---
 
 ## Key Files
 
