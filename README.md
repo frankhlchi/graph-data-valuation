@@ -2,13 +2,13 @@
 
 ![Graph Data Valuation Framework](https://github.com/frankhlchi/graph-data-valuation/blob/main/framework.png)
 
+### The image above illustrates our PC-Winter value estimation framework for graph data valuation.
 
 This repository contains code for performing data valuation on graph-structured data using the Precedence-Constrained Winter (PC-Winter) value method. The PC-Winter algorithm is designed to identify influential graph elements in graph datasets by considering the hierarchical structure of node contributions.
 
 ## Key Files
 
-- `pc_winter_run.py`: Main script to run PC-Winter and calculate PC values for graph elements. This script implements the core algorithm, including local propagation, preorder traversal of the contribution tree, and hierarchical truncation.
-
+- `pc_winter_run.py`: Main script to run PC-Winter and calculate PC values for graph elements. This script implements an online version of the framework shown in the image, including local propagation, preorder traversal of the contribution tree, and hierarchical truncation. The code provides a practical implementation of the steps illustrated in the framework.
 - `node_drop_large_cora.py`: Script to aggregate node values calculated by PC-Winter and evaluate performance by sequentially dropping high-value nodes. This script demonstrates the effectiveness of the calculated PC values.
 
 - `plot.ipynb`: Jupyter notebook to visualize the drop in model performance as high-value nodes are removed. This notebook helps in analyzing the results of the node dropping experiments.
