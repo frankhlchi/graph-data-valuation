@@ -9,7 +9,7 @@ This repository contains code for performing data valuation on graph-structured 
 ## Key Files
 
 - `pc_winter_run.py`: Main script to run PC-Winter and calculate PC values for graph elements. This script implements an online version of the framework shown in the image, including local propagation, preorder traversal of the contribution tree, and hierarchical truncation.
-- 
+
 - `node_drop_large_cora.py`: Script to aggregate node values calculated by PC-Winter and evaluate performance by sequentially dropping high-value nodes. This script demonstrates the effectiveness of the calculated PC values.
 
 - `plot.ipynb`: Jupyter notebook to visualize the drop in model performance as high-value nodes are removed. This notebook helps in analyzing the results of the node dropping experiments.
