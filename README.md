@@ -8,9 +8,9 @@ This repository contains code for performing data valuation on graph-structured 
 
 1. **Input Graphs (Inductive Setting)**: This includes three mutually exclusive graph structures:
    - Training Graph: Contains the elements to be evaluated. In this graph:
-     - Nodes labeled as $$l$$ (e.g., $$l_0$$, $$l_1$$) represent labeled nodes
-     - Nodes labeled as $$w$$ (e.g., $$w_0$$ to $$w_3$$) represent 1-distance neighbors of labeled nodes
-     - Nodes labeled as $$u$$ (e.g., $$u_0$$ to $$u_6$$) represent 2-distance neighbors of labeled nodes
+     - Nodes labeled as $$l$$ ($$l_0$$, $$l_1$$) represent labeled nodes
+     - Nodes labeled as $$w$$ ($$w_0$$ - $$w_3$$) represent 1-distance neighbors of labeled nodes
+     - Nodes labeled as $$u$$ ($$u_0$$ - $$u_6$$) represent 2-distance neighbors of labeled nodes
    - Validation Graph: Used for calculating accuracy as a utility function
    - Testing Graph: Reserved for downstream tasks such as node dropping
 
