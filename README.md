@@ -4,20 +4,22 @@ This repository contains code for performing data valuation on graph-structured 
 
 **The image below illustrates our PC-Winter value estimation for graph data valuation.**
 
-
 1. **Input Graphs (Inductive Setting)**: This includes three mutually exclusive graph structures:
    - Training Graph: Contains the elements to be evaluated. In this graph:
-     - Nodes labeled as 'l' (e.g., l0, l1) represent labeled nodes
-     - Nodes labeled as 'w' (e.g., w0, w1, w2, w3) represent 1-distance neighbors of labeled nodes
-     - Nodes labeled as 'u' (e.g., u0, u1, u2, u4, u5, u6) represent 2-distance neighbors of labeled nodes
+     - Nodes labeled as '$$l$$' (e.g., $$l_0$$, $$l_1$$) represent labeled nodes
+     - Nodes labeled as '$$w$$' (e.g., $$w_0$$, $$w_1$$, $$w_2$$, $$w_3$$) represent 1-distance neighbors of labeled nodes
+     - Nodes labeled as '$$u$$' (e.g., $$u_0$$, $$u_1$$, $$u_2$$, $$u_4$$, $$u_5$$, $$u_6$$) represent 2-distance neighbors of labeled nodes
    - Validation Graph: Used for calculating accuracy as a utility function
    - Testing Graph: Reserved for downstream tasks such as node dropping
 
 2. **PC-Winter Value Estimation Steps**:
-   1. Perform a Preorder Traversal with hierarchical truncations on the Computational Tree
-   2. Retrieve a permissive Permutation
+   1. Perform a Preorder Traversal with hierarchical truncations on the Computational Tree $$\mathcal{T}$$
+   2. Retrieve a permissive Permutation $$\pi$$
    3. Calculate the marginal contribution of each player based on validation accuracy difference
    4. Estimate PC-Winter Value by averaging marginal contributions of each player over multiple permutations
+
+![Graph Data Valuation Framework](https://github.com/frankhlchi/graph-data-valuation/blob/main/framework.png)
+
 
 ## Key Files
 
