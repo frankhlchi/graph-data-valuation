@@ -20,7 +20,7 @@ This repository contains code for performing data valuation on graph-structured 
    3. Calculate the marginal contribution of each player based on validation accuracy difference
    4. Estimate PC-Winter Value by averaging marginal contributions of each player over multiple permutations
 
-![Graph Data Valuation Framework](https://github.com/frankhlchi/graph-data-valuation/blob/main/framework.png)
+![Graph Data Valuation Framework](https://github.com/frankhlchi/graph-data-valuation/blob/main/framework_pc.png)
 
 ---
 
