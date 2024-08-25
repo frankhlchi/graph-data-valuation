@@ -13,7 +13,7 @@ Key features of the implementation include:
    a key component of the PC-Winter algorithm.
 
 4. Hierarchical Truncation: Implemented to reduce computational complexity,
-   truncating at both the labeled node level and the hop levels.
+   truncating at both the 1-hop node level and the 2-hop node levels.
 
 5. Inductive Setting: The script sets up an inductive learning environment by removing validation and test nodes
    from the training graph.
