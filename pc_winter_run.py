@@ -59,12 +59,12 @@ dataset_params = {
     'Computers': {
         'num_epochs': 200,
         'lr': 0.1,
-        'weight_decay': 5e-4
+        'weight_decay': 0
     },
     'Photo': {
         'num_epochs': 200,
-        'lr': 0.01,
-        'weight_decay': 5e-4
+        'lr': 0.1,
+        'weight_decay': 0
     },
     'Physics': {
         'num_epochs': 30,
